@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.5.1;
+
+contract test2 {
+    enum State { Waiting, Ready, Active }
+    State public state;
+
+    constructor() public {
+        state = State.Active;
+    }
+
+    function activate() public {
+        state = State.Active;
+    }
+
+    function isActive() public view returns(bool) {
+        return state == State.Active;
+    }
+}
